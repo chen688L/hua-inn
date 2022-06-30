@@ -1,0 +1,36 @@
+module.exports = function(sequelize,DataTypes){
+    return sequelize.define(
+        'news',
+        {
+            id:{
+                type:DataTypes.INTEGER,
+                primaryKey:true,
+                allowNull:false
+            },
+            news_title:{
+                type:DataTypes.STRING,
+                field:'news_title',
+                allowNull:true
+            },
+            news_content:{
+                type:DataTypes.STRING,
+                field:'news_content',
+                allowNull:true
+            },
+            news_date:{
+                type:DataTypes.STRING,
+                field:'news_date',
+                allowNull:true
+            },
+            news_type_id:{
+                type:DataTypes.STRING,
+                field:'news_type_id',
+                allowNull:true
+            },
+            userid:{
+                type:DataTypes.STRING,
+                field:'userid'
+            }
+        }
+    )
+}

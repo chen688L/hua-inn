@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends "views/homeFrame.html" %}
+
+    {% block left %}
+    <div class="menu">
+        <ul>
+            <li><a href="/RoleManage">角色管理</a></li>
+            <li><a href="/userManage">用户管理</a></li>
+            <li><a href="/logout">退出登录</a></li>
+        </ul>
+    </div>
+    {% endblock %}
+
+    {% block right %}
+    <h1>欢迎进入，{{info}}用户</h1>
+    {% endblock %}
+</body>
+</html>

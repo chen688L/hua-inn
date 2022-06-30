@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+
+<body>
+    {% extends "views/homeIndex.html" %}
+    {% block right %}
+    <h2>新增用户</h2>
+    <form action="/creatUserOK" name="user" method="POST">
+        UID : <input type="text" name="id"><br><br>
+        用户： <input type="text" name="username"><br><br>
+        密码： <input type="text" name="password"><br><br>
+        手机： <input type="text" name="phone"><br><br>
+        角色：<select name="roleid">
+                <option value="1">管理员</option>
+                <option value="2">老师</option>
+                <option value="3">学生</option>   
+            </select><br><br>
+        <input type="submit" value="确定注册">
+    </form>
+
+
+    <style>
+        h2,form{
+            text-align: center;
+        }
+
+    </style>
+    {% endblock %}
+
+    
+</body>
+
+</html>

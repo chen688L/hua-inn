@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    {% extends "views/homeIndex.html" %}
+    {% block right %}
+    <div>
+        <h2>角色管理</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>角色</th>
+            <th>操作</th>
+        </tr>
+        {% for role in roles %}
+        <tr>
+            <td>{{role.id}}</td>
+            <td>{{role.rolename}}</td>
+            <td>
+                <a href="http://127.0.0.1:3000/updateRole">修改</a>
+                <!-- <a href="http://127.0.0.1:3000/deleteRole?">销毁</a> -->
+                <a href="" onclick="deleteRole('{{role.id}}','{{role.rolename}}')">销毁</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+   <h2><button><a href="http://127.0.0.1:3000/creatRole">新增角色</a></button></h2> 
+    <style type="text/css">
+        h2{
+            text-align: center;
+        }
+        table {
+            width: 450px;
+            margin: auto;
+            margin-top: 20px;
+            font-size:13px;
+            color:#333333;
+            border-width: 1px;
+            border-color: #999999;
+            border-collapse: collapse;
+        }
+        table th {
+            /* background-color:black; */
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+        }
+        table td {
+            width: 150px;
+            border-width: 1px;
+            padding: 10px;
+            border-style: solid;
+        }
+        </style>
+    </div>
+    <script>
+        function Besure(info){
+            if(confirm(info)){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        function deleteRole(id,name){
+            var text1="确定要销毁角色  ("+name+")  吗？"
+            if(Besure(text1)){
+                window.location.href="/deleteRole?id="+id;
+                alert("已销毁角色："+name);
+            }
+        }
+    </script>
+
+    {% endblock %}
+    
+
+    
+</body>
+</html>

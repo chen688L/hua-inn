@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    {% extends "views/homeIndex.html" %}
+    {% block right %}
+    <h2>更新用户密码</h2>
+    <h3>{{info}}</h3>
+    <form action="/updateUserOK" name="user" method="POST">
+        手机： <input type="text" name="phone"  id="phone" readonly><br>
+        <!-- readonly -->
+        原密码： <input type="text" name="password1" value=""><br>
+        新密码： <input type="text" name="password2"><br>
+        <input type="submit" value="确定修改">
+    </form>
+    <script>
+        // var username = decodeURI(document.URL);
+        if(decodeURI(document.URL)!=null){
+            var phone = decodeURI(window.location.href.split("?")[1].split("=")[1]);
+            var phone1=phone.replace(/\'/g,"");
+            document.getElementById("phone").value=phone1;
+        } 
+    </script>
+    {% endblock %}
+</body>
+</html>

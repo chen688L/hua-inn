@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+
+<body>
+    {% extends "views/homeIndex.html" %}
+    {% block right %}
+    <h2>新增角色</h2>
+    <form action="/creatRoleOK" name="role" method="POST">
+        请输入要新增的角色： <input type="text" name="rolename"><br>
+        <br>
+        <input type="submit" value="确定增加">
+    </form>
+
+
+    <style>
+        h2,form{
+            text-align: center;
+        }
+
+    </style>
+    {% endblock %}
+
+    
+</body>
+
+</html>

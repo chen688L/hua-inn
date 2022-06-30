@@ -1,0 +1,40 @@
+module.exports = function(sequelize,DataTypes){
+    return sequelize.define(
+        'goods',
+        {
+            id:{
+                type:DataTypes.INTEGER,
+                primaryKey:true,
+                autoIncrement:true
+            },
+            title:{
+                type:DataTypes.STRING,
+                field:'title'
+            },
+            stole:{
+                type:DataTypes.STRING,
+                field:'stole'
+            },
+            price:{
+                type:DataTypes.STRING,
+                field:'price'
+            },
+            img:{
+                type:DataTypes.STRING,
+                field:'img'
+            },
+            desc:{
+                type:DataTypes.STRING,
+                field:'desc'
+            },
+            order:{
+                type:DataTypes.STRING,
+                field:'order'
+            },
+            userid:{
+                type:DataTypes.INTEGER,
+                field:'userid'
+            }
+        }
+    )
+}

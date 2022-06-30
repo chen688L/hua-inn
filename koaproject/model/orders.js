@@ -1,0 +1,44 @@
+module.exports = function(sequelize,DataTypes){
+    return sequelize.define(
+        'orders',
+        {
+            id:{
+                type:DataTypes.INTEGER,
+                primaryKey:true,
+                autoIncrement:true
+            },
+            title:{
+                type:DataTypes.STRING,
+                field:'title'
+            },
+            num:{
+                type:DataTypes.STRING,
+                field:'num'
+            },
+            price:{
+                type:DataTypes.STRING,
+                field:'price'
+            },
+            address:{
+                type:DataTypes.STRING,
+                field:'address'
+            },
+            phone:{
+                type:DataTypes.STRING,
+                field:'phone'
+            },
+            name:{
+                type:DataTypes.STRING,
+                field:'name'
+            },
+            userid:{
+                type:DataTypes.INTEGER,
+                field:'userid'
+            },
+            company:{
+                type:DataTypes.INTEGER,
+                field:'company'
+            }
+        }
+    )
+}
