@@ -13,6 +13,11 @@ import VueParticles from 'vue-particles'
 import md5 from 'js-md5';
 
 
+// 在main.js中引入echarts，并挂载到原型上
+import  * as  echarts from 'echarts'
+Vue.prototype.$echarts = echarts
+
+
 Vue.config.productionTip = false
 
 Vue.prototype.$axios=axios //注意：挂载上去的名字不能等同于axios，使用$axio即可

@@ -10,7 +10,7 @@
     <el-container>
       <!-- 左侧路由跳转 -->
       <el-aside width="200px">
-        <nav-main :userMain="userMain" :roleMain="roleMain" :GoodsList="GoodsList"/>
+        <nav-main :userMain="userMain" :roleMain="roleMain" :GoodsList="GoodsList" :EchartsUser="EchartsUser"/>
       </el-aside>
       <!-- 右侧主页显示 -->
       <el-main>
@@ -28,6 +28,8 @@ import NavMain from "./First/navMain.vue";
 import UserMain from "./First/UserMain2.vue";
 import RoleMain from "./First/RoleMain.vue";
 import GoodsList from "./First/GoodsList.vue";
+import EchartsUser from "./First/Echarts_User.vue";
+
 
 export default {
   name: "HelloWorld",
@@ -37,6 +39,7 @@ export default {
     UserMain,
     RoleMain,
     GoodsList,
+    EchartsUser
   },
   data() {
     return {
@@ -55,6 +58,9 @@ export default {
     GoodsList: function () {
       this.iscom = "GoodsList";
     },
+    EchartsUser:function(){
+      this.iscom = "EchartsUser"
+    }
     
   },
 };

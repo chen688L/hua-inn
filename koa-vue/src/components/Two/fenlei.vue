@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div id="fenlei">
   
     <table id="fenlei_tab">
@@ -66,4 +66,76 @@ export default {
   height: 500px;
 }
 
+</style> -->
+<template>
+  <div>
+    <el-row>
+      <el-col
+        :span="5"
+         v-for="(item, index) in cards" 
+         :key="index"
+         :offset="index > 0 ? 1 : 0"
+      >
+        <el-card :body-style="{ padding: '45px'}" >
+          <img
+            :src="item.img"
+            class="image"
+          />
+          <div style="padding: 14px">
+            <span>{{ item.title }}</span>
+            <div class="bottom clearfix">
+              <time class="time">{{ item.price }}元</time>
+            </div>
+            <el-button type="info"  @click="good(index)" plain>详 情</el-button>
+          </div>
+        </el-card>
+      </el-col>
+    </el-row>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "fenlei",
+  props: ["cards",  "good"],
+  data() {
+    return {
+      mt: 0.0,
+    };
+  },
+};
+</script>
+
+<style>
+.time {
+    font-size: 13px;
+    color: #999;
+  }
+  
+  .bottom {
+    margin-top: 13px;
+    margin-bottom: 13px;
+    line-height: 12px;
+  }
+
+  .button {
+    padding: 0;
+    float: right;
+  }
+
+  .image {
+    width: 300px;
+    height: 300px;
+    display: block;
+  }
+
+  .clearfix:before,
+  .clearfix:after {
+      display: table;
+      content: "";
+  }
+  
+  .clearfix:after {
+      clear: both
+  }
 </style>

@@ -14,10 +14,10 @@
         <li><a @click="firstPage">首页</a></li>
         <li>|</li>
         <li><a @click="fenlei">分类</a></li>
-        <!-- <li>|</li>
-        <li><a @click="place">广场</a></li> -->
-        <!-- <li>|</li> -->
-        <!-- <li><a @click="cart">结算</a></li> -->
+        <li>|</li>
+        <li><a @click="place">广场</a></li>
+        <li>|</li>
+        <li><a @click="cart">结算</a></li>
         <li>|</li>
         <li><a @click="userCenter">个人中心</a></li>
         <li><a class="el-icon-user" @click="logout()">{{returnLogin}}</a>
